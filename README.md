@@ -1,4 +1,4 @@
-### Running local Mesos + Marathon dev ~cluster~
+### Running local Mesos + Marathon dev ~~cluster~~
 
 ```
 nix-shell sandbox.nix
