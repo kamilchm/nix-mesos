@@ -20,6 +20,7 @@ with import <nixpkgs> {}; {
 
       export MESOS_MASTER=zk://127.0.0.1:2181/mesos
       export MESOS_CONTAINERIZERS=docker,mesos
+      export MESOS_SYSTEMD_ENABLE_SUPPORT=false
       export MESOS_PORT=5051
       export MESOS_RESOURCES="ports(*):[11000-11999]"
       screen -dmLS mesos-slave \
