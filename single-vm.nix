@@ -20,15 +20,23 @@
           enable = true;
           master = ''mesos-vm:5050'';
           withDocker = true;
+          extraCmdLineOptions = [
+            ''--executor_environment_variables="{\"PATH\": \"/run/current-system/sw/bin/\"}"''
+          ];
         };
       };
 
       marathon = {
         enable = true;
         master = ''mesos-vm:5050'';
+        user = "root";
       };
     };
 
+    systemd.services.mesos-slave.path = with pkgs; [
+      gzip
+    ];
+    
     environment.systemPackages = with pkgs; [
       python
     ];
